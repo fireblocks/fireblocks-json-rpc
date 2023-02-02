@@ -1,0 +1,54 @@
+{
+  "name": "fireblocks-json-rpc",
+  "version": "0.2.0",
+  "description": "",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "npm run build && node dist/src/cli.js",
+    "test": "npm run build && npm install -g . && mocha --exit --recursive 'test/**/*.test.ts'",
+    "prepare": "npm run build"
+  },
+  "bin": {
+    "fireblocks-json-rpc": "./dist/src/cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/fireblocks/tech/incubation/fireblocks-json-rpc.git"
+  },
+  "files": [
+    "dist/",
+    "src/",
+    "LICENSE",
+    "README.md"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/fireblocks/tech/incubation/fireblocks-json-rpc/issues"
+  },
+  "homepage": "https://gitlab.com/fireblocks/tech/incubation/fireblocks-json-rpc#readme",
+  "dependencies": {
+    "@fireblocks/fireblocks-web3-provider": "^1.0.2",
+    "commander": "^9.4.1",
+    "debug": "^4.3.4",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "figlet": "^1.5.2",
+    "tslib": "^2.4.1"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.3.4",
+    "@types/debug": "^4.1.7",
+    "@types/express": "^4.17.15",
+    "@types/figlet": "^1.5.5",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^18.11.18",
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.4"
+  }
+}
