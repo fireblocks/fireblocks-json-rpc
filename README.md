@@ -40,14 +40,16 @@ Options:
   --path [path]                                        http api endpoint path (env: FIREBLOCKS_PATH)
   --ipcPath [path]                                     IPC path to listen on, defaults to '~/.fireblocks/json-rpc.ipc' on linux and macos, and '\\.\pipe\fireblocks-json-rpc.ipc' on
                                                        windows (default: "/Users/user/.fireblocks/json-rpc.ipc", env: FIREBLOCKS_IPC_PATH)
-  --env [env_var_name]                                 sets the listening address as an environment variable (default: "FIREBLOCKS_JSON_RPC", env: FIREBLOCKS_JSON_RPC_ENV_VAR)
+  --env [env_var_name]                                 sets the listening address as an environment variable (default: "FIREBLOCKS_JSON_RPC_ADDRESS", env: FIREBLOCKS_JSON_RPC_ENV_VAR)
   --vaultAccountIds [vaultAccountIds]                  Fireblocks Web3 Provider option (env: FIREBLOCKS_VAULT_ACCOUNT_IDS)
+  --apiBaseUrl [apiBaseUrl]                            Fireblocks Web3 Provider option (env: FIREBLOCKS_API_BASE_URL)
   --fallbackFeeLevel [fallbackFeeLevel]                Fireblocks Web3 Provider option (env: FIREBLOCKS_FALLBACK_FEE_LEVEL)
-  --note [note]                                        Fireblocks Web3 Provider option (env: FIREBLOCKS_NOTE)
+  --note [note]                                        Fireblocks Web3 Provider option (default: "Created by Fireblocks JSON-RPC", env: FIREBLOCKS_NOTE)
   --pollingInterval [pollingInterval]                  Fireblocks Web3 Provider option (env: FIREBLOCKS_POLLING_INTERVAL)
   --oneTimeAddressesEnabled [oneTimeAddressesEnabled]  Fireblocks Web3 Provider option (env: FIREBLOCKS_ONE_TIME_ADDRESSES_ENABLED)
   --externalTxId [externalTxId]                        Fireblocks Web3 Provider option (env: FIREBLOCKS_EXTERNAL_TX_ID)
   --gaslessGasTankVaultId [gaslessGasTankVaultId]      Fireblocks Web3 Provider option (env: FIREBLOCKS_GAS_TANK_VAULT_ID)
+  --userAgent [userAgent]                              Fireblocks Web3 Provider option (env: FIREBLOCKS_USER_AGENT)
   -q, --quiet                                          don't print anything (env: FIREBLOCKS_QUIET)
   -v, --verbose                                        print a lot of stuff, useful for debugging, same as setting DEBUG=fireblocks-json-rpc (env: FIREBLOCKS_VERBOSE)
   -r, --raw                                            only output the listening address (env: FIREBLOCKS_VERBOSE)
@@ -58,15 +60,22 @@ Learn more about the Fireblocks Web3 Provider configuration options at
 https://github.com/fireblocks/fireblocks-web3-provider#fireblocksproviderconfig
 
 Examples:
-    $ fireblocks-json-rpc --apiKey <key> --privateKey <path_or_contents> --chainId <chainId>
-    $ fireblocks-json-rpc --apiKey <key> --privateKey <path_or_contents> --rpcUrl <rpcUrl>
-    or with environment variables:
-    $ FIREBLOCKS_API_KEY=<key> FIREBLOCKS_API_PRIVATE_KEY_PATH=<path_or_contents> FIREBLOCKS_CHAIN_ID=<chainId> fireblocks-json-rpc
-    or to run another tool (with environment variables already set):
-    $ fireblocks-json-rpc --http -- cast estimate 0x5fe5a74b7628c43514DB077d5E112cf6593ed8D3 "increment()" --rpc-url {}
-    $ fireblocks-json-rpc --chainId 5 --http -- cast estimate 0x5fe5a74b7628c43514DB077d5E112cf6593ed8D3 "increment()" --rpc-url {}
-    or to print requests and responses:
-    fireblocks-json-rpc --verbose --http -- cast estimate 0x5fe5a74b7628c43514DB077d5E112cf6593ed8D3 "increment()" --rpc-url {}
+  Basic usage:
+      $ fireblocks-json-rpc --apiKey <key> --privateKey <path_or_contents> --chainId <chainId>
+      $ fireblocks-json-rpc --apiKey <key> --privateKey <path_or_contents> --rpcUrl <rpcUrl>
+
+  Using environment variables:
+      $ FIREBLOCKS_API_KEY=<key> FIREBLOCKS_API_PRIVATE_KEY_PATH=<path_or_contents> FIREBLOCKS_CHAIN_ID=<chainId> fireblocks-json-rpc
+
+  Run another tool using "--" (with environment variables already set):
+      $ fireblocks-json-rpc --http -- cast estimate 0x5fe5a74b7628c43514DB077d5E112cf6593ed8D3 "increment()" --rpc-url {}
+      $ fireblocks-json-rpc --chainId 5 --http -- cast estimate 0x5fe5a74b7628c43514DB077d5E112cf6593ed8D3 "increment()" --rpc-url {}
+
+  Print requests and responses using --verbose:
+      $ fireblocks-json-rpc --verbose --http -- cast estimate 0x5fe5a74b7628c43514DB077d5E112cf6593ed8D3 "increment()" --rpc-url {}
+
+  Using a sandbox workspace with --apiBaseUrl:
+      $ fireblocks-json-rpc --apiBaseUrl https://sandbox-api.fireblocks.io --apiKey <key> --privateKey <path_or_contents> --chainId <chainId>
 ```
 
 ## Developemnt
