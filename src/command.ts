@@ -22,12 +22,12 @@ export function createFireblocksJsonRpcCommand() {
         .addOption(new Option("--env [env_var_name]", "sets the listening address as an environment variable").default(DEFAULT_ENV_VAR).env("FIREBLOCKS_JSON_RPC_ENV_VAR"))
 
         .addOption(new Option("--vaultAccountIds [vaultAccountIds]", FIREBLOCKS_WEB3_PROVIDER_OPTION_DESC).env("FIREBLOCKS_VAULT_ACCOUNT_IDS"))
+        .addOption(new Option("--apiBaseUrl [apiBaseUrl]", FIREBLOCKS_WEB3_PROVIDER_OPTION_DESC).env("FIREBLOCKS_API_BASE_URL"))
         .addOption(new Option("--fallbackFeeLevel [fallbackFeeLevel]", FIREBLOCKS_WEB3_PROVIDER_OPTION_DESC).env("FIREBLOCKS_FALLBACK_FEE_LEVEL"))
         .addOption(new Option("--note [note]", FIREBLOCKS_WEB3_PROVIDER_OPTION_DESC).default(DEFAULT_TX_NOTE).env("FIREBLOCKS_NOTE"))
         .addOption(new Option("--pollingInterval [pollingInterval]",FIREBLOCKS_WEB3_PROVIDER_OPTION_DESC).env("FIREBLOCKS_POLLING_INTERVAL"))
         .addOption(new Option("--oneTimeAddressesEnabled [oneTimeAddressesEnabled]", FIREBLOCKS_WEB3_PROVIDER_OPTION_DESC).env("FIREBLOCKS_ONE_TIME_ADDRESSES_ENABLED"))
         .addOption(new Option("--externalTxId [externalTxId]", FIREBLOCKS_WEB3_PROVIDER_OPTION_DESC).env("FIREBLOCKS_EXTERNAL_TX_ID"))
-        .addOption(new Option("--gaslessGasTankVaultId [gaslessGasTankVaultId]", FIREBLOCKS_WEB3_PROVIDER_OPTION_DESC).env("FIREBLOCKS_GAS_TANK_VAULT_ID"))
         .addOption(new Option("--userAgent [userAgent]", FIREBLOCKS_WEB3_PROVIDER_OPTION_DESC).env("FIREBLOCKS_USER_AGENT"))
 
         .addOption(new Option("-q, --quiet", "don't print anything").env("FIREBLOCKS_QUIET"))
@@ -46,14 +46,21 @@ Learn more about the Fireblocks Web3 Provider configuration options at
 https://github.com/fireblocks/fireblocks-web3-provider#fireblocksproviderconfig
 
 Examples:
-    $ fireblocks-json-rpc --apiKey <key> --privateKey <path_or_contents> --chainId <chainId>
-    $ fireblocks-json-rpc --apiKey <key> --privateKey <path_or_contents> --rpcUrl <rpcUrl>
-    or with environment variables:
-    $ FIREBLOCKS_API_KEY=<key> FIREBLOCKS_API_PRIVATE_KEY_PATH=<path_or_contents> FIREBLOCKS_CHAIN_ID=<chainId> fireblocks-json-rpc
-    or to run another tool (with environment variables already set):
-    $ fireblocks-json-rpc --http -- cast estimate 0x5fe5a74b7628c43514DB077d5E112cf6593ed8D3 "increment()" --rpc-url {}
-    $ fireblocks-json-rpc --chainId 5 --http -- cast estimate 0x5fe5a74b7628c43514DB077d5E112cf6593ed8D3 "increment()" --rpc-url {}
-    or to print requests and responses:
-    fireblocks-json-rpc --verbose --http -- cast estimate 0x5fe5a74b7628c43514DB077d5E112cf6593ed8D3 "increment()" --rpc-url {}
+  Basic usage:
+      $ fireblocks-json-rpc --apiKey <key> --privateKey <path_or_contents> --chainId <chainId>
+      $ fireblocks-json-rpc --apiKey <key> --privateKey <path_or_contents> --rpcUrl <rpcUrl>
+
+  Using environment variables:
+      $ FIREBLOCKS_API_KEY=<key> FIREBLOCKS_API_PRIVATE_KEY_PATH=<path_or_contents> FIREBLOCKS_CHAIN_ID=<chainId> fireblocks-json-rpc
+
+  Run another tool using "--" (with environment variables already set):
+      $ fireblocks-json-rpc --http -- cast estimate 0x5fe5a74b7628c43514DB077d5E112cf6593ed8D3 "increment()" --rpc-url {}
+      $ fireblocks-json-rpc --chainId 5 --http -- cast estimate 0x5fe5a74b7628c43514DB077d5E112cf6593ed8D3 "increment()" --rpc-url {}
+
+  Print requests and responses using --verbose:
+      $ fireblocks-json-rpc --verbose --http -- cast estimate 0x5fe5a74b7628c43514DB077d5E112cf6593ed8D3 "increment()" --rpc-url {}
+
+  Using a sandbox workspace with --apiBaseUrl:
+      $ fireblocks-json-rpc --apiBaseUrl https://sandbox-api.fireblocks.io --apiKey <key> --privateKey <path_or_contents> --chainId <chainId>
 `)
 }
