@@ -3,7 +3,7 @@ import express from "express"
 import { FireblocksWeb3Provider, FireblocksProviderConfig, version as FireblocksWeb3ProviderVersion } from "@fireblocks/fireblocks-web3-provider"
 import { ServerConfig } from "./types";
 import Debug from "debug";
-import { DEBUG_NAMESPACE, DEFAULT_IPC_PATH } from "./constants";
+import { DEBUG_NAMESPACE } from "./constants";
 import { version } from "../package.json"
 import net from "net";
 import { mkdirSync } from "fs";
@@ -64,7 +64,11 @@ async function createServer(this: any, config: ServerConfig): Promise<{ server: 
                     providerResponse = {
                         "id": jsonRpcRequest.id,
                         "jsonrpc": jsonRpcRequest.jsonrpc,
-                        error: { code: -32603, message: error.message }
+                        error: {
+                            message: error.message,
+                            code: -32603,
+                            ...error,
+                        }
                     }
                 }
 
