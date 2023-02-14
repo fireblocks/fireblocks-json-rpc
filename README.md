@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/@fireblocks%2Ffireblocks-json-rpc.svg)](https://badge.fury.io/js/@fireblocks%2Ffireblocks-json-rpc)
+
 # Fireblocks Local JSON-RPC
 > **Warning**  
 > This package is in a beta stage and should be used at your own risk.  
