@@ -19,6 +19,9 @@
   ],
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "tsc",
     "start": "npm run build && node dist/src/cli.js",
