@@ -29,6 +29,7 @@ export function createFireblocksJsonRpcCommand() {
         .addOption(new Option("--oneTimeAddressesEnabled [oneTimeAddressesEnabled]", FIREBLOCKS_WEB3_PROVIDER_OPTION_DESC).env("FIREBLOCKS_ONE_TIME_ADDRESSES_ENABLED"))
         .addOption(new Option("--externalTxId [externalTxId]", FIREBLOCKS_WEB3_PROVIDER_OPTION_DESC).env("FIREBLOCKS_EXTERNAL_TX_ID"))
         .addOption(new Option("--userAgent [userAgent]", FIREBLOCKS_WEB3_PROVIDER_OPTION_DESC).env("FIREBLOCKS_USER_AGENT"))
+        .addOption(new Option("--logTransactionStatusChanges [logTransactionStatusChanges]", FIREBLOCKS_WEB3_PROVIDER_OPTION_DESC).env("FIREBLOCKS_LOG_TX_STATUS_CHANGES"))
 
         .addOption(new Option("-q, --quiet", "don't print anything").env("FIREBLOCKS_QUIET"))
         .addOption(new Option("-v, --verbose", `print a lot of stuff, useful for debugging, same as setting DEBUG=${DEBUG_NAMESPACE}`).env("FIREBLOCKS_VERBOSE"))

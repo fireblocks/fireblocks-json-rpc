@@ -32,31 +32,33 @@ Usage: fireblocks-json-rpc [options] [-- tool [argument ...]]
 A CLI for running a local Ethereum JSON-RPC server powered by Fireblocks
 
 Options:
-  --apiKey <key>                                       Fireblocks API key (env: FIREBLOCKS_API_KEY)
-  --privateKey <path_or_contents>                      Fireblocks API private key (env: FIREBLOCKS_API_PRIVATE_KEY_PATH)
-  --chainId [chainId]                                  either chainId or rpcUrl must be provided (env: FIREBLOCKS_CHAIN_ID)
-  --rpcUrl [rpcUrl]                                    either rpcUrl or chainId must be provided (env: FIREBLOCKS_RPC_URL)
-  --http                                               run an http server instead of using IPC (env: FIREBLOCKS_HTTP)
-  --port [port]                                        http server port (env: FIREBLOCKS_PORT)
-  --host [host]                                        http server host (env: FIREBLOCKS_HOST)
-  --path [path]                                        http api endpoint path (env: FIREBLOCKS_PATH)
-  --ipcPath [path]                                     IPC path to listen on, defaults to '~/.fireblocks/json-rpc.ipc' on linux and macos, and '\\.\pipe\fireblocks-json-rpc.ipc' on
-                                                       windows (default: "/Users/user/.fireblocks/json-rpc.ipc", env: FIREBLOCKS_IPC_PATH)
-  --env [env_var_name]                                 sets the listening address as an environment variable (default: "FIREBLOCKS_JSON_RPC_ADDRESS", env: FIREBLOCKS_JSON_RPC_ENV_VAR)
-  --vaultAccountIds [vaultAccountIds]                  Fireblocks Web3 Provider option (env: FIREBLOCKS_VAULT_ACCOUNT_IDS)
-  --apiBaseUrl [apiBaseUrl]                            Fireblocks Web3 Provider option (env: FIREBLOCKS_API_BASE_URL)
-  --fallbackFeeLevel [fallbackFeeLevel]                Fireblocks Web3 Provider option (env: FIREBLOCKS_FALLBACK_FEE_LEVEL)
-  --note [note]                                        Fireblocks Web3 Provider option (default: "Created by Fireblocks JSON-RPC", env: FIREBLOCKS_NOTE)
-  --pollingInterval [pollingInterval]                  Fireblocks Web3 Provider option (env: FIREBLOCKS_POLLING_INTERVAL)
-  --oneTimeAddressesEnabled [oneTimeAddressesEnabled]  Fireblocks Web3 Provider option (env: FIREBLOCKS_ONE_TIME_ADDRESSES_ENABLED)
-  --externalTxId [externalTxId]                        Fireblocks Web3 Provider option (env: FIREBLOCKS_EXTERNAL_TX_ID)
-  --gaslessGasTankVaultId [gaslessGasTankVaultId]      Fireblocks Web3 Provider option (env: FIREBLOCKS_GAS_TANK_VAULT_ID)
-  --userAgent [userAgent]                              Fireblocks Web3 Provider option (env: FIREBLOCKS_USER_AGENT)
-  -q, --quiet                                          don't print anything (env: FIREBLOCKS_QUIET)
-  -v, --verbose                                        print a lot of stuff, useful for debugging, same as setting DEBUG=fireblocks-json-rpc (env: FIREBLOCKS_VERBOSE)
-  -r, --raw                                            only output the listening address (env: FIREBLOCKS_VERBOSE)
-  --version                                            output the version number
-  -h, --help                                           display help for command
+  --apiKey <key>                                               Fireblocks API key (env: FIREBLOCKS_API_KEY)
+  --privateKey <path_or_contents>                              Fireblocks API private key (env: FIREBLOCKS_API_PRIVATE_KEY_PATH)
+  --chainId [chainId]                                          either chainId or rpcUrl must be provided (env: FIREBLOCKS_CHAIN_ID)
+  --rpcUrl [rpcUrl]                                            either rpcUrl or chainId must be provided (env: FIREBLOCKS_RPC_URL)
+  --http                                                       run an http server instead of using IPC (env: FIREBLOCKS_HTTP)
+  --port [port]                                                http server port (env: FIREBLOCKS_PORT)
+  --host [host]                                                http server host (env: FIREBLOCKS_HOST)
+  --path [path]                                                http api endpoint path (env: FIREBLOCKS_PATH)
+  --ipcPath [path]                                             IPC path to listen on, defaults to '~/.fireblocks/json-rpc.ipc' on linux and macos, and
+                                                               '\\.\pipe\fireblocks-json-rpc.ipc' on windows (default: "/Users/user/.fireblocks/json-rpc.ipc", env:
+                                                               FIREBLOCKS_IPC_PATH)
+  --env [env_var_name]                                         sets the listening address as an environment variable (default: "FIREBLOCKS_JSON_RPC_ADDRESS", env:
+                                                               FIREBLOCKS_JSON_RPC_ENV_VAR)
+  --vaultAccountIds [vaultAccountIds]                          Fireblocks Web3 Provider option (env: FIREBLOCKS_VAULT_ACCOUNT_IDS)
+  --apiBaseUrl [apiBaseUrl]                                    Fireblocks Web3 Provider option (env: FIREBLOCKS_API_BASE_URL)
+  --fallbackFeeLevel [fallbackFeeLevel]                        Fireblocks Web3 Provider option (env: FIREBLOCKS_FALLBACK_FEE_LEVEL)
+  --note [note]                                                Fireblocks Web3 Provider option (default: "Created by Fireblocks JSON-RPC", env: FIREBLOCKS_NOTE)
+  --pollingInterval [pollingInterval]                          Fireblocks Web3 Provider option (env: FIREBLOCKS_POLLING_INTERVAL)
+  --oneTimeAddressesEnabled [oneTimeAddressesEnabled]          Fireblocks Web3 Provider option (env: FIREBLOCKS_ONE_TIME_ADDRESSES_ENABLED)
+  --externalTxId [externalTxId]                                Fireblocks Web3 Provider option (env: FIREBLOCKS_EXTERNAL_TX_ID)
+  --userAgent [userAgent]                                      Fireblocks Web3 Provider option (env: FIREBLOCKS_USER_AGENT)
+  --logTransactionStatusChanges [logTransactionStatusChanges]  Fireblocks Web3 Provider option (env: FIREBLOCKS_LOG_TX_STATUS_CHANGES)
+  -q, --quiet                                                  don't print anything (env: FIREBLOCKS_QUIET)
+  -v, --verbose                                                print a lot of stuff, useful for debugging, same as setting DEBUG=fireblocks-json-rpc (env: FIREBLOCKS_VERBOSE)
+  -r, --raw                                                    only output the listening address (env: FIREBLOCKS_VERBOSE)
+  --version                                                    output the version number
+  -h, --help                                                   display help for command
 
 Learn more about the Fireblocks Web3 Provider configuration options at
 https://github.com/fireblocks/fireblocks-web3-provider#fireblocksproviderconfig
