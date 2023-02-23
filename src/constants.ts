@@ -14,3 +14,4 @@ export const DEFAULT_IPC_PATH = process.platform === "win32" ?
 export const DEFAULT_ENV_VAR = "FIREBLOCKS_JSON_RPC_ADDRESS"
 export const FIREBLOCKS_WEB3_PROVIDER_OPTION_DESC = "Fireblocks Web3 Provider option"
 export const DEFAULT_TX_NOTE = "Created by Fireblocks JSON-RPC"
+export const BASE_PORT = 50_000

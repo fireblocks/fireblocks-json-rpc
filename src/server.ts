@@ -3,7 +3,7 @@ import express from "express"
 import { FireblocksWeb3Provider, FireblocksProviderConfig, version as FireblocksWeb3ProviderVersion } from "@fireblocks/fireblocks-web3-provider"
 import { ServerConfig } from "./types";
 import Debug from "debug";
-import { DEBUG_NAMESPACE } from "./constants";
+import { BASE_PORT, DEBUG_NAMESPACE } from "./constants";
 import { version } from "../package.json"
 import net from "net";
 import { mkdirSync } from "fs";
@@ -40,6 +40,11 @@ async function createServer(this: any, config: ServerConfig): Promise<{ server: 
     const web3ProviderConfig = serverConfigToWeb3ProviderConfig(config)
 
     const fireblocksProvider = new FireblocksWeb3Provider(web3ProviderConfig)
+
+    if (config.http && !config.port) {
+        const chainId = config.chainId || await fireblocksProvider.request({ method: 'eth_chainId' })
+        config.port = BASE_PORT + Number(chainId)
+    }
 
     function receiveRequest(jsonRpcRequest: any, exteernalResponseCallback: (response: any) => void) {
         debug("Received request", jsonRpcRequest)
