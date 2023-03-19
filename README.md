@@ -72,7 +72,6 @@ Examples:
       $ FIREBLOCKS_API_KEY=<key> FIREBLOCKS_API_PRIVATE_KEY_PATH=<path_or_contents> FIREBLOCKS_CHAIN_ID=<chainId> fireblocks-json-rpc
 
   Run another tool using "--" (with environment variables already set):
-      $ fireblocks-json-rpc --http -- cast estimate 0x5fe5a74b7628c43514DB077d5E112cf6593ed8D3 "increment()" --rpc-url {}
       $ fireblocks-json-rpc --chainId 5 --http -- cast estimate 0x5fe5a74b7628c43514DB077d5E112cf6593ed8D3 "increment()" --rpc-url {}
       $ fireblocks-json-rpc --http -- forge script script/NFT.s.sol:MyScript --sender "0x827226cc80020b343a8c03e44A974CEbF0336e74" --broadcast --unlocked --rpc-url {}
 
