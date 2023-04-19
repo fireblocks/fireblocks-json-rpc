@@ -38,7 +38,7 @@ Options:
   --rpcUrl [rpcUrl]                                            either rpcUrl or chainId must be provided (env: FIREBLOCKS_RPC_URL)
   --http                                                       run an http server instead of using IPC (env: FIREBLOCKS_HTTP)
   --port [port]                                                http server port (env: FIREBLOCKS_PORT)
-  --host [host]                                                http server host (env: FIREBLOCKS_HOST)
+  --hostname [host]                                            http server host, default 127.0.0.1 - use 0.0.0.0 to listen on all interfaces (env: FIREBLOCKS_HOSTNAME)
   --path [path]                                                http api endpoint path (env: FIREBLOCKS_PATH)
   --ipcPath [path]                                             IPC path to listen on, defaults to '~/.fireblocks/json-rpc.ipc' on linux and macos, and
                                                                '\\.\pipe\fireblocks-json-rpc.ipc' on windows (default: "/Users/user/.fireblocks/json-rpc.ipc", env:

@@ -16,7 +16,7 @@ export function createFireblocksJsonRpcCommand() {
 
         .addOption(new Option("--http", "run an http server instead of using IPC").env("FIREBLOCKS_HTTP"))
         .addOption(new Option("--port [port]", "http server port").env("FIREBLOCKS_PORT"))
-        .addOption(new Option("--host [host]", "http server host").env("FIREBLOCKS_HOST"))
+        .addOption(new Option("--hostname [host]", "http server host, default 127.0.0.1 - use 0.0.0.0 to listen on all interfaces").env("FIREBLOCKS_HOSTNAME"))
         .addOption(new Option("--path [path]", "http api endpoint path").default(undefined, '/${--apiKey}').env("FIREBLOCKS_PATH"))
         .addOption(new Option("--ipcPath [path]", `IPC path to listen on, defaults to '${LINUX_DEFAULT_IPC_PATH}' on linux and macos, and '${WINDOWS_DEFAULT_IPC_PATH}' on windows`).default(DEFAULT_IPC_PATH).env("FIREBLOCKS_IPC_PATH"))
         .addOption(new Option("--env [env_var_name]", "sets the listening address as an environment variable").default(DEFAULT_ENV_VAR).env("FIREBLOCKS_JSON_RPC_ENV_VAR"))
