@@ -3,7 +3,17 @@ dotenv.config()
 
 import { Command, Option } from "commander"
 import { version } from "../package.json"
-import { asciiTitle, DEBUG_NAMESPACE, LINUX_DEFAULT_IPC_PATH, WINDOWS_DEFAULT_IPC_PATH, DEFAULT_ENV_VAR, DEFAULT_IPC_PATH, FIREBLOCKS_WEB3_PROVIDER_OPTION_DESC, DEFAULT_TX_NOTE } from "./constants"
+import {
+    asciiTitle,
+    DEBUG_NAMESPACE,
+    LINUX_DEFAULT_IPC_PATH,
+    WINDOWS_DEFAULT_IPC_PATH,
+    DEFAULT_ENV_VAR,
+    DEFAULT_IPC_PATH,
+    FIREBLOCKS_WEB3_PROVIDER_OPTION_DESC,
+    DEFAULT_TX_NOTE,
+    DEFAULT_PORT,
+} from "./constants"
 
 export function createFireblocksJsonRpcCommand() {
     return new Command().usage('[options] [-- tool [argument ...]]')
@@ -15,7 +25,7 @@ export function createFireblocksJsonRpcCommand() {
         .addOption(new Option("--rpcUrl [rpcUrl]", "either rpcUrl or chainId must be provided").env("FIREBLOCKS_RPC_URL"))
 
         .addOption(new Option("--http", "run an http server instead of using IPC").env("FIREBLOCKS_HTTP"))
-        .addOption(new Option("--port [port]", "http server port").env("FIREBLOCKS_PORT"))
+        .addOption(new Option("--port [port]", "http server port").default(DEFAULT_PORT).env("FIREBLOCKS_PORT"))
         .addOption(new Option("--host [host]", "http server host").env("FIREBLOCKS_HOST"))
         .addOption(new Option("--path [path]", "http api endpoint path").default(undefined, '/${--apiKey}').env("FIREBLOCKS_PATH"))
         .addOption(new Option("--ipcPath [path]", `IPC path to listen on, defaults to '${LINUX_DEFAULT_IPC_PATH}' on linux and macos, and '${WINDOWS_DEFAULT_IPC_PATH}' on windows`).default(DEFAULT_IPC_PATH).env("FIREBLOCKS_IPC_PATH"))
@@ -25,7 +35,7 @@ export function createFireblocksJsonRpcCommand() {
         .addOption(new Option("--apiBaseUrl [apiBaseUrl]", FIREBLOCKS_WEB3_PROVIDER_OPTION_DESC).env("FIREBLOCKS_API_BASE_URL"))
         .addOption(new Option("--fallbackFeeLevel [fallbackFeeLevel]", FIREBLOCKS_WEB3_PROVIDER_OPTION_DESC).env("FIREBLOCKS_FALLBACK_FEE_LEVEL"))
         .addOption(new Option("--note [note]", FIREBLOCKS_WEB3_PROVIDER_OPTION_DESC).default(DEFAULT_TX_NOTE).env("FIREBLOCKS_NOTE"))
-        .addOption(new Option("--pollingInterval [pollingInterval]",FIREBLOCKS_WEB3_PROVIDER_OPTION_DESC).env("FIREBLOCKS_POLLING_INTERVAL"))
+        .addOption(new Option("--pollingInterval [pollingInterval]", FIREBLOCKS_WEB3_PROVIDER_OPTION_DESC).env("FIREBLOCKS_POLLING_INTERVAL"))
         .addOption(new Option("--oneTimeAddressesEnabled [oneTimeAddressesEnabled]", FIREBLOCKS_WEB3_PROVIDER_OPTION_DESC).env("FIREBLOCKS_ONE_TIME_ADDRESSES_ENABLED"))
         .addOption(new Option("--externalTxId [externalTxId]", FIREBLOCKS_WEB3_PROVIDER_OPTION_DESC).env("FIREBLOCKS_EXTERNAL_TX_ID"))
         .addOption(new Option("--userAgent [userAgent]", FIREBLOCKS_WEB3_PROVIDER_OPTION_DESC).env("FIREBLOCKS_USER_AGENT"))
@@ -34,7 +44,6 @@ export function createFireblocksJsonRpcCommand() {
         .addOption(new Option("-q, --quiet", "don't print anything").env("FIREBLOCKS_QUIET"))
         .addOption(new Option("-v, --verbose", `print a lot of stuff, useful for debugging, same as setting DEBUG=${DEBUG_NAMESPACE}`).env("FIREBLOCKS_VERBOSE"))
         .addOption(new Option("-r, --raw", "only output the listening address").env("FIREBLOCKS_VERBOSE"))
-        
 
         .version(version, '--version')
 
