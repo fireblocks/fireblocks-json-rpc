@@ -1,6 +1,6 @@
 {
   "name": "@fireblocks/fireblocks-json-rpc",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "repository": "github:fireblocks/fireblocks-web3-provider",
   "author": "Fireblocks",
