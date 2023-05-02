@@ -34,16 +34,16 @@ A CLI for running a local Ethereum JSON-RPC server powered by Fireblocks
 Options:
   --apiKey <key>                                               Fireblocks API key (env: FIREBLOCKS_API_KEY)
   --privateKey <path_or_contents>                              Fireblocks API private key (env: FIREBLOCKS_API_PRIVATE_KEY_PATH)
-  --chainId [chainId]                                          either chainId or rpcUrl must be provided (env: FIREBLOCKS_CHAIN_ID)
-  --rpcUrl [rpcUrl]                                            either rpcUrl or chainId must be provided (env: FIREBLOCKS_RPC_URL)
-  --http                                                       run an http server instead of using IPC (env: FIREBLOCKS_HTTP)
-  --port [port]                                                http server port (env: FIREBLOCKS_PORT)
-  --host [host]                                                http server host (env: FIREBLOCKS_HOST)
-  --path [path]                                                http api endpoint path (env: FIREBLOCKS_PATH)
-  --ipcPath [path]                                             IPC path to listen on, defaults to '~/.fireblocks/json-rpc.ipc' on linux and macos, and
-                                                               '\\.\pipe\fireblocks-json-rpc.ipc' on windows (default: "/Users/user/.fireblocks/json-rpc.ipc", env:
-                                                               FIREBLOCKS_IPC_PATH)
-  --env [env_var_name]                                         sets the listening address as an environment variable (default: "FIREBLOCKS_JSON_RPC_ADDRESS", env:
+  --chainId [chainId]                                          Either chainId or rpcUrl must be provided (env: FIREBLOCKS_CHAIN_ID)
+  --rpcUrl [rpcUrl]                                            Either rpcUrl or chainId must be provided (env: FIREBLOCKS_RPC_URL)
+  --http                                                       Run an HTTP server instead of using IPC (env: FIREBLOCKS_HTTP)
+  --port [port]                                                HTTP server port (default: 8545, env: FIREBLOCKS_PORT)
+  --host [host]                                                HTTP server host (default: "127.0.0.1", env: FIREBLOCKS_HOST)
+  --suppressHostWarning                                        Supress the warning printed when setting --host not to localhost (env: FIREBLOCKS_HOST)
+  --httpPath [path]                                            HTTP JSON-RPC endpoint path (env: FIREBLOCKS_HTTP_PATH)
+  --ipcPath [path]                                             IPC path to listen on, defaults to '~/.fireblocks/json-rpc.ipc' on linux and macos, and '\\.\pipe\fireblocks-json-rpc.ipc'
+                                                               on windows (default: "/Users/user/.fireblocks/json-rpc.ipc", env: FIREBLOCKS_IPC_PATH)
+  --env [env_var_name]                                         Sets the listening address as an environment variable (default: "FIREBLOCKS_JSON_RPC_ADDRESS", env:
                                                                FIREBLOCKS_JSON_RPC_ENV_VAR)
   --vaultAccountIds [vaultAccountIds]                          Fireblocks Web3 Provider option (env: FIREBLOCKS_VAULT_ACCOUNT_IDS)
   --apiBaseUrl [apiBaseUrl]                                    Fireblocks Web3 Provider option (env: FIREBLOCKS_API_BASE_URL)
@@ -54,25 +54,25 @@ Options:
   --externalTxId [externalTxId]                                Fireblocks Web3 Provider option (env: FIREBLOCKS_EXTERNAL_TX_ID)
   --userAgent [userAgent]                                      Fireblocks Web3 Provider option (env: FIREBLOCKS_USER_AGENT)
   --logTransactionStatusChanges [logTransactionStatusChanges]  Fireblocks Web3 Provider option (env: FIREBLOCKS_LOG_TX_STATUS_CHANGES)
-  -q, --quiet                                                  don't print anything (env: FIREBLOCKS_QUIET)
-  -v, --verbose                                                print a lot of stuff, useful for debugging, same as setting DEBUG=fireblocks-json-rpc (env: FIREBLOCKS_VERBOSE)
-  -r, --raw                                                    only output the listening address (env: FIREBLOCKS_VERBOSE)
-  --version                                                    output the version number
+  -q, --quiet                                                  Don't print anything (env: FIREBLOCKS_QUIET)
+  -v, --verbose                                                Print a lot of stuff, useful for debugging, same as setting DEBUG=fireblocks-json-rpc (env: FIREBLOCKS_VERBOSE)
+  -r, --raw                                                    Only output the listening address (env: FIREBLOCKS_VERBOSE)
+  --version                                                    Output the version number
   -h, --help                                                   display help for command
 
 Learn more about the Fireblocks Web3 Provider configuration options at
 https://github.com/fireblocks/fireblocks-web3-provider#fireblocksproviderconfig
 
-Examples:
+Example usage:
   Basic usage:
       $ fireblocks-json-rpc --apiKey <key> --privateKey <path_or_contents> --chainId <chainId>
       $ fireblocks-json-rpc --apiKey <key> --privateKey <path_or_contents> --rpcUrl <rpcUrl>
 
-  Using environment variables:
-      $ FIREBLOCKS_API_KEY=<key> FIREBLOCKS_API_PRIVATE_KEY_PATH=<path_or_contents> FIREBLOCKS_CHAIN_ID=<chainId> fireblocks-json-rpc
+  Using environment variables (.env file also works):
+      $ FIREBLOCKS_API_KEY=<key> FIREBLOCKS_API_PRIVATE_KEY_PATH=<path_or_contents> FIREBLOCKS_CHAIN_ID=<chainId>         fireblocks-json-rpc
 
-  Run another tool using "--" (with environment variables already set):
-      $ fireblocks-json-rpc --chainId 5 --http -- cast estimate 0x5fe5a74b7628c43514DB077d5E112cf6593ed8D3 "increment()" --rpc-url {}
+  Run another tool using "--":
+      $ fireblocks-json-rpc --http -- cast estimate 0x5fe5a74b7628c43514DB077d5E112cf6593ed8D3 "increment()" --rpc-url {}
       $ fireblocks-json-rpc --http -- forge script script/NFT.s.sol:MyScript --sender "0x827226cc80020b343a8c03e44A974CEbF0336e74" --broadcast --unlocked --rpc-url {}
 
   Print requests and responses using --verbose:

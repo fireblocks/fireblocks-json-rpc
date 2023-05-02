@@ -32,6 +32,9 @@ async function main() {
         console.log(address)
     } else {
         log(`Fireblocks JSON-RPC server listening on\n${address}\n`)
+        if (options.host && options.host != "localhost" && options.host != "127.0.0.1" && !options.suppressHostWarning) {
+            log(`Warning: listening on ${options.host} instead of localhost is dangerous, because it exposes the unauthenticated JSON-RPC service using your Fireblocks credentials in a potentially publicly accesible way.\nPlease make sure you are aware of the security implications and are properly securing the exposed port.\nTo disable this warning, use the --suppressHostWarning flag.`)
+        }
     }
     if (command.args.length > 0) {
         log(`Running command:\n${args.join(' ')}\n`)

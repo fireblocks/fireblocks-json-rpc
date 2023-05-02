@@ -15,3 +15,4 @@ export const DEFAULT_ENV_VAR = "FIREBLOCKS_JSON_RPC_ADDRESS"
 export const FIREBLOCKS_WEB3_PROVIDER_OPTION_DESC = "Fireblocks Web3 Provider option"
 export const DEFAULT_TX_NOTE = "Created by Fireblocks JSON-RPC"
 export const DEFAULT_PORT = 8545
+export const DEFAULT_HOST = "127.0.0.1"

@@ -15,7 +15,7 @@ async function applyDefaults(config: ServerConfig): Promise<ServerConfig> {
     return {
         ...config,
         port: config.port || 0,
-        hostname: config.hostname || "127.0.0.1",
+        host: config.host || "127.0.0.1",
         httpPath: config.httpPath || `/${config.apiKey}`,
     }
 }
@@ -104,7 +104,7 @@ async function createServer(this: any, config: ServerConfig): Promise<{ server: 
     }
 
     const server = config.http ?
-        app.listen(config.port!, config.hostname!) :
+        app.listen(config.port!, config.host!) :
         app.listen(config.ipcPath)
 
     const closeServerOnSignal = (signal: string) => {

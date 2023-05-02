@@ -2,7 +2,7 @@ import { FireblocksProviderConfig } from '@fireblocks/fireblocks-web3-provider'
 
 type ServerConfig = FireblocksProviderConfig & {
     port?: number,
-    hostname?: string,
+    host?: string,
     httpPath?: string,
     verbose?: boolean,
     quiet?: boolean,
@@ -10,6 +10,7 @@ type ServerConfig = FireblocksProviderConfig & {
     ipcPath?: string,
     raw?: boolean,
     env?: string,
+    suppressHostWarning?: boolean,
 }
 
 export { ServerConfig }
