@@ -2,7 +2,7 @@
   "name": "@fireblocks/fireblocks-json-rpc",
   "version": "0.0.3",
   "description": "",
-  "repository": "github:fireblocks/fireblocks-web3-provider",
+  "repository": "github:fireblocks/fireblocks-json-rpc",
   "author": "Fireblocks",
   "license": "MIT",
   "keywords": [
@@ -37,7 +37,7 @@
     "README.md"
   ],
   "dependencies": {
-    "@fireblocks/fireblocks-web3-provider": "^1.1.5",
+    "@fireblocks/fireblocks-web3-provider": "^1.2.2",
     "commander": "^9.4.1",
     "debug": "^4.3.4",
     "dotenv": "^16.0.3",
