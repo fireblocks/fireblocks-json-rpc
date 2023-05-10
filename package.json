@@ -38,6 +38,7 @@
   ],
   "dependencies": {
     "@fireblocks/fireblocks-web3-provider": "^1.2.2",
+    "ethers": "5.7.2",
     "commander": "^9.4.1",
     "debug": "^4.3.4",
     "dotenv": "^16.0.3",
