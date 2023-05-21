@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [v0.0.4](https://github.com/fireblocks/fireblocks-json-rpc/compare/v0.0.3...v0.0.4)
+
+> 21 May 2023
+
+- release 0.0.3 [`3d85953`](https://github.com/fireblocks/fireblocks-json-rpc/commit/3d85953157a7cfe0b9d8302126da1725bee3b85a)
+- Update `@fireblocks/fireblocks-web3-provider` [`aced360`](https://github.com/fireblocks/fireblocks-json-rpc/commit/aced360285673900a6095384fff52544325dcbeb)
+- Fix repo name in package.json [`d12939b`](https://github.com/fireblocks/fireblocks-json-rpc/commit/d12939b7f8a5622fbc8a369a823107299359567e)
+
 #### [v0.0.3](https://github.com/fireblocks/fireblocks-json-rpc/compare/v0.0.2...v0.0.3)
 
 > 2 May 2023
