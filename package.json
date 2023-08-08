@@ -24,8 +24,8 @@
   },
   "scripts": {
     "build": "tsc",
-    "start": "npm run build && node dist/src/cli.js",
-    "test": "npm run build && npm install -g . && mocha --exit --recursive 'test/**/*.test.ts'",
+    "start": "node dist/src/cli.js",
+    "test": "npm install -g . && mocha --exit --recursive 'test/**/*.test.ts'",
     "prepare": "npm run build"
   },
   "bin": {
