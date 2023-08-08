@@ -15,7 +15,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '16.14.2'
-        run: npm ci
+      - run: npm ci
 
       - name: Bump version and generate changelog
         run: |
