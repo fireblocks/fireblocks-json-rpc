@@ -12,26 +12,22 @@ jobs:
         with:
           # Necessary for changelog generation
           fetch-depth: 0
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '16.14.2'
+      - uses: actions/setup-node@v3
       - run: npm ci
 
       - name: Bump version and generate changelog
         run: |
-          initialTag=${{ github.event.release.tag_name }}
-          tag="${initialTag//[v]/}"
-          echo $tag
-          git remote update
-          git fetch
-          git checkout --track origin/main
+          tag=${{ github.event.release.tag_name }}
+          version="${tag//[v]/}"
+          # Adding version to env for Docker publishing step
+          echo "VERSION=$version >> $GITHUB_ENV
           git config --global user.email "github-actions@github.com"
           git config --global user.name "Github Actions"
-          npm --no-git-tag-version --allow-same-version version $tag
+          npm --no-git-tag-version --allow-same-version version $version
           npm i -g auto-changelog
           auto-changelog --hide-credit -l 100
           git add .
-          git commit -m "release $tag"
+          git commit -m "release $version"
           git push
 
       - name: Create npm package tarball
@@ -58,4 +54,6 @@ jobs:
           # Using node:18-alpine supported platform
           platforms: linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64/v8,linux/ppc64le,linux/s390x
           push: true
-          tags: fireblocks/fireblocks-json-rpc:latest
+          tags: |
+            ${{ secrets.DOCKERHUB_USERNAME }}/json-rpc:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/json-rpc:${{ env.VERSION }}
