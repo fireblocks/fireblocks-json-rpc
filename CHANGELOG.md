@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [v0.1.2](https://github.com/fireblocks/fireblocks-json-rpc/compare/v0.1.1...v0.1.2)
+
+> 20 August 2023
+
+- Fix npm auth [`#8`](https://github.com/fireblocks/fireblocks-json-rpc/pull/8)
+- release 0.1.1 [`17316d9`](https://github.com/fireblocks/fireblocks-json-rpc/commit/17316d9bdf2512e053d0e392f3cd6cc0ac537747)
+- add registry-url to actions/setup-node [`9bb5222`](https://github.com/fireblocks/fireblocks-json-rpc/commit/9bb5222c9662227376a545da1c79dce7707cc101)
+
 #### [v0.1.1](https://github.com/fireblocks/fireblocks-json-rpc/compare/v0.1.0...v0.1.1)
 
 > 20 August 2023
