@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [v0.1.1](https://github.com/fireblocks/fireblocks-json-rpc/compare/v0.1.0...v0.1.1)
+
+> 20 August 2023
+
+- Fix publishing workflow [`#7`](https://github.com/fireblocks/fireblocks-json-rpc/pull/7)
+- checkout branch before auto-changelog [`4b80ca5`](https://github.com/fireblocks/fireblocks-json-rpc/commit/4b80ca54fbaf4083d02a77ba89122254f2d52cc4)
+
+#### [v0.1.0](https://github.com/fireblocks/fireblocks-json-rpc/compare/v0.0.4...v0.1.0)
+
+> 20 August 2023
+
+- Dockerization [`#5`](https://github.com/fireblocks/fireblocks-json-rpc/pull/5)
+- Bump semver from 7.3.8 to 7.5.4 [`#6`](https://github.com/fireblocks/fireblocks-json-rpc/pull/6)
+- extend workflow to build Docker image and publish to DockerHub [`6b6561a`](https://github.com/fireblocks/fireblocks-json-rpc/commit/6b6561aca24481586800596cb247870027a390b9)
+- update Dockerfile and Python tests [`0179678`](https://github.com/fireblocks/fireblocks-json-rpc/commit/01796786df2db0f4787f3c272c36a0eb803c63ad)
+- update publish-npm-docker workflow [`3228cc5`](https://github.com/fireblocks/fireblocks-json-rpc/commit/3228cc569edcc8792156851f47c8332c105a5ad2)
+- release 0.0.4 [`15698f9`](https://github.com/fireblocks/fireblocks-json-rpc/commit/15698f97d5d51d74b057088a30074e6ac18f9eeb)
+- fix adding VERSION to env [`008880a`](https://github.com/fireblocks/fireblocks-json-rpc/commit/008880a880f44febcb759ad2905aeb157b9a1830)
+- fix workflow steps [`8989f30`](https://github.com/fireblocks/fireblocks-json-rpc/commit/8989f30a15ecd2060231df6da215701152936b39)
+
 #### [v0.0.4](https://github.com/fireblocks/fireblocks-json-rpc/compare/v0.0.3...v0.0.4)
 
 > 21 May 2023
