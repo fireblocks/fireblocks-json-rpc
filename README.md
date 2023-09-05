@@ -1,10 +1,6 @@
 [![npm version](https://badge.fury.io/js/@fireblocks%2Ffireblocks-json-rpc.svg)](https://badge.fury.io/js/@fireblocks%2Ffireblocks-json-rpc)
 
 # Fireblocks Local JSON-RPC
-> **Warning**  
-> This package is in a beta stage and should be used at your own risk.  
-> The provided interfaces might go through backwards-incompatibale changes.  
-> For a more stable library (with a different paradigm) you can use [Fireblocks Web3 Provider](https://github.com/fireblocks/fireblocks-web3-provider)
 
 `fireblocks-json-rpc` is a command-line [JSON-RPC](https://ethereum.org/en/developers/docs/apis/json-rpc/) server powered by the Fireblocks API.  
 Its goal is to make it easy for Fireblocks users to interact with EVM chains.
