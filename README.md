@@ -14,7 +14,10 @@ Additional SDKs:
 npm install -g @fireblocks/fireblocks-json-rpc
 ```
 ### Running in Docker 
-As an alternative option, you can also run the Local JSON-RPC server as a Docker container using the official Docker image. Please note the image is currently in beta.
+As an alternative option, you can also run the Local JSON-RPC server as a Docker container using the official Docker image. 
+
+**Please note the image is currently in beta.**
+
 For more information, please see: https://hub.docker.com/r/fireblocksofficial/json-rpc
 
 
