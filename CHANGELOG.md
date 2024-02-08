@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [v0.2.0](https://github.com/fireblocks/fireblocks-json-rpc/compare/v0.1.2...v0.2.0)
+
+> 8 February 2024
+
+- Add Docker image link to README.md [`#10`](https://github.com/fireblocks/fireblocks-json-rpc/pull/10)
+- Update README.md [`#9`](https://github.com/fireblocks/fireblocks-json-rpc/pull/9)
+- Update fireblocks-web3-provider [`d9b868f`](https://github.com/fireblocks/fireblocks-json-rpc/commit/d9b868f4a29ac0e6185929ee4cc6b5356ea4b8e4)
+- Update Web3 version in python test scripts [`c82b7a3`](https://github.com/fireblocks/fireblocks-json-rpc/commit/c82b7a3baf7251db91c6d66561f00e72128e7f4c)
+- release 0.1.2 [`f5eb9f1`](https://github.com/fireblocks/fireblocks-json-rpc/commit/f5eb9f1b2398335d532542ebd519443a01ae7b5a)
+- formatting [`2b7b4ad`](https://github.com/fireblocks/fireblocks-json-rpc/commit/2b7b4adb4e4a99b642fb1e4613e667a722cc4139)
+- formatting [`838bedf`](https://github.com/fireblocks/fireblocks-json-rpc/commit/838bedf5165b4db88badd711182e67866f82ed91)
+
 #### [v0.1.2](https://github.com/fireblocks/fireblocks-json-rpc/compare/v0.1.1...v0.1.2)
 
 > 20 August 2023
