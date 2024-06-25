@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [v0.2.1](https://github.com/fireblocks/fireblocks-json-rpc/compare/v0.2.0...v0.2.1)
+
+> 25 June 2024
+
+- release 0.2.0 [`9e0e4f2`](https://github.com/fireblocks/fireblocks-json-rpc/commit/9e0e4f2f2bd4d74aad2aab5c57019a417d78d440)
+- Update fireblocks-web3-provider to 1.3.7 [`b6d8fb2`](https://github.com/fireblocks/fireblocks-json-rpc/commit/b6d8fb28abd11ed6ff38bd8af0efcdc7d4225b4f)
+
 #### [v0.2.0](https://github.com/fireblocks/fireblocks-json-rpc/compare/v0.1.2...v0.2.0)
 
 > 8 February 2024
