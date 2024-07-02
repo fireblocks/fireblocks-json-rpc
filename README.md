@@ -85,7 +85,7 @@ Example usage:
       $ fireblocks-json-rpc --apiBaseUrl https://sandbox-api.fireblocks.io --apiKey <key> --privateKey <path_or_contents> --chainId <chainId>
 ```
 
-## Developemnt
+## Development
 
 ### Installation
 ```bash
