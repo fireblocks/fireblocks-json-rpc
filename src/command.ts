@@ -24,6 +24,7 @@ export function createFireblocksJsonRpcCommand() {
         .addOption(new Option("--privateKey <path_or_contents>", "Fireblocks API private key").env("FIREBLOCKS_API_PRIVATE_KEY_PATH").makeOptionMandatory())
         .addOption(new Option("--chainId [chainId]", "Either chainId or rpcUrl must be provided").env("FIREBLOCKS_CHAIN_ID"))
         .addOption(new Option("--rpcUrl [rpcUrl]", "Either rpcUrl or chainId must be provided").env("FIREBLOCKS_RPC_URL"))
+        .addOption(new Option("--assetId [assetId]", "Fireblocks asset ID").env("FIREBLOCKS_ASSET_ID"))
 
         .addOption(new Option("--http", "Run an HTTP server instead of using IPC").env("FIREBLOCKS_HTTP"))
         .addOption(new Option("--port [port]", "HTTP server port").default(DEFAULT_PORT).env("FIREBLOCKS_PORT"))
