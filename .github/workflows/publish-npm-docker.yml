@@ -32,8 +32,6 @@ jobs:
 
       - name: Publish to npm
         run: npm publish *.tgz
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Set up QEMU (build against more platforms)
         uses: docker/setup-qemu-action@v2
