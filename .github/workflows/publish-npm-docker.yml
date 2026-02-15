@@ -7,6 +7,9 @@ env:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write  # Required for OIDC/Trusted Publishing
+      contents: read
     steps:
       - uses: actions/checkout@v3
         with:
