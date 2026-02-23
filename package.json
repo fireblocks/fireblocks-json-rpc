@@ -37,7 +37,7 @@
     "README.md"
   ],
   "dependencies": {
-    "@fireblocks/fireblocks-web3-provider": "^1.3.8",
+    "@fireblocks/fireblocks-web3-provider": "^1.3.14",
     "commander": "^9.4.1",
     "debug": "^4.3.4",
     "dotenv": "^16.0.3",
