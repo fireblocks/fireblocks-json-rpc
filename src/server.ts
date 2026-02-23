@@ -41,12 +41,12 @@ async function createServer(this: any, config: ServerConfig): Promise<{ server: 
 
     const fireblocksProvider = new FireblocksWeb3Provider(web3ProviderConfig)
 
-    function receiveRequest(jsonRpcRequest: any, exteernalResponseCallback: (response: any) => void) {
+    function receiveRequest(jsonRpcRequest: any, externalResponseCallback: (response: any) => void) {
         debug("Received request", jsonRpcRequest)
 
         const responseCallback = (response: any) => {
             debug("Sending response", response)
-            exteernalResponseCallback(response)
+            externalResponseCallback(response)
         }
 
         if (jsonRpcRequest.method == "web3_clientVersion") {
